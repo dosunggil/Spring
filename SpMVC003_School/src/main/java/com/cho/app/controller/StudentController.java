@@ -45,8 +45,11 @@ public class StudentController {
 		
 		StudentVO stVO = stService.findById(stNum);
 		model.addAttribute("STUDENTS",stVO);
-		return "student/detail";
+		return "student/detail_"+stNum;
 	}
+	
+	
+	
 	@RequestMapping(value="/student/insert",method=RequestMethod.GET)
 	public String insert() {
 		return "student/insert";

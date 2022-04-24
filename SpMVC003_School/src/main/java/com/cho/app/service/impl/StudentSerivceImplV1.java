@@ -49,7 +49,7 @@ public class StudentSerivceImplV1 implements StudentService {
 		
 		stVO.setStNum("00002");
 		stVO.setStName("박종훈");
-		stVO.setStDept("수학과");
+		stVO.setStDept("토목공학과");
 		stVO.setIntGrade(4);
 		stVO.setStAddr("경기 화성시");
 		stList.add(stVO);
@@ -59,7 +59,7 @@ public class StudentSerivceImplV1 implements StudentService {
 		
 		stVO.setStNum("00003");
 		stVO.setStName("장태근");
-		stVO.setStDept("수학과");
+		stVO.setStDept("토목공학과");
 		stVO.setIntGrade(4);
 		stVO.setStAddr("전라남도 순천시");
 		stList.add(stVO);

@@ -62,14 +62,14 @@ div.botton-box button:hover {
 cursor: pointer;}
 
 </style>
-<script src="${rootPath}/resources/js/student.js"></script>
+<script src="${rootPath}/resources/js/sts.js"></script>
 <body>
 	<%@ include file="/WEB-INF/views/include/include_header.jsp"%>
 	<%@ include file="/WEB-INF/views/include/include_nav.jsp"%>
 
 
 	<section>
-		<article>통원 진료 받았음</article>
+		<article>list_view.jsp</article>
 		<table>
 			<tr>
 				<th>학번</th>

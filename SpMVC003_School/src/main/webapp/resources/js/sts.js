@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
   변수 table 에는 undefined 가 담기게 된다.
   (== false)
   */
-    if (table) {
+   if (table) {
     table.addEventListener("click", (e) => {
       const target = e.target;
       const text = target.innerText;
@@ -25,8 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const stNum = target.dataset.num;
 
       if (className === "name") {
-        document.location.href = "/app/student/detail?stNum=" + stNum;
-      }
+        document.location.href = "/app/student/detail?stNum="+stNum;
+      } 
     });
   }
 });

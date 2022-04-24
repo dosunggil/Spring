@@ -57,19 +57,19 @@ cursor: pointer;}
 		<table>
 			<tr>
 				<th>이름</th>
-				<td>도성길</td>
+				<td>박종훈</td>
 				<th>학년</th>
-				<td>3</td>
+				<td>4</td>
 			</tr>
 			<tr>
 				<th>학번</th>
-				<td>00001</td>
+				<td>00002</td>
 				<th>전공</th>
-				<td>수학과</td>
+				<td>토목공학과</td>
 			</tr>
 			<tr>
 				<th>주소</th>
-				<td colspan="3">광주광역시</td>
+				<td colspan="3">경기 화성시</td>
 			</tr>
 		</table>
 		<div class="botton-box"><button>학생정보 수정</button></div>
