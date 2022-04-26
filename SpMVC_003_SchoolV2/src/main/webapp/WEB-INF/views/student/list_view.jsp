@@ -65,7 +65,7 @@ color: inherit;
 text-decoration: none;}
 
 </style>
-<script src="${rootPath}/resources/js/sts.js"></script>
+<script src="${rootPath}/resources/js/sts.js?ver=2022-04-26-001"></script>
 <body>
 	<%@ include file="/WEB-INF/views/include/include_header.jsp"%>
 	<%@ include file="/WEB-INF/views/include/include_nav.jsp"%>
