@@ -1,0 +1,38 @@
+package com.cho.school.exec;
+
+public class ReturnEx1 {
+
+	public static void main(String[] args) {
+
+		Integer result = add("30","40");
+		
+		System.out.println(result);
+		
+		result = add("30 ", "40 ");
+		if(result == null) {
+			System.out.println("연산오류");
+		} else {
+		System.out.println(result);
+		}
+	}
+	
+	// 두개의 문자열형 정수를 매개변수로 받아
+	// 숫자연산을 수행한 후 결과를 return
+
+	
+	private static Integer add(String num1, String num2) {
+
+		int num11 = 0;
+		int num22 = 0;
+		try {
+			num11 = Integer.valueOf(num1);
+			num22 = Integer.valueOf(num2);
+			
+		} catch (Exception e) {
+			return null;
+		}
+		Integer sum = num11 + num22;
+		
+		return sum;
+	}
+}
