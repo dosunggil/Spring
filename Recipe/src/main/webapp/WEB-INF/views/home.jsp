@@ -21,22 +21,10 @@
 	box-sizing: content-box;
 }
 
-nav {
-	height: 100px;
-}
-
 section {
+	margin-top: 130px;
 	width: 100%;
-}
-div.container {
-padding : 0 250px;
-
-}
-div.search {
-	display: block;
-	width: 400px;
-	border: 2px solid #ff7f00;
-	position: relative;
+	height: 100%;
 }
 
 fieldset {
@@ -45,67 +33,87 @@ fieldset {
 }
 
 div.container {
-	display: flex;
+	position: relative;
+	width : 700px;
+	height: 55px;
+	margin : 0 auto;
 }
 
-div.logo {
-	height: 70px;
+img.logo {
+	cursor: pointer;
+	position: absolute;
 	width: 200px;
-}
-
-div.logo img {
-	width: 100%;
 	height: auto;
 }
 
+div.search {
+	display: block;
+	width: 400px;
+	border: 2px solid #ff7f00;
+	position: absolute;
+	left: 210px;
+	top: 10px;
+}
+
 div.search input[type=text] {
-	width: auto;
+	width: 350px;
 	height: 35px;
 	border: none;
 	outline: none;
 	padding-left: 5px;
-	position: relative;
 }
 
 div.search button {
-	width: 40px;
+	cursor: pointer; width : 40px;
 	height: 35px;
 	position: absolute;
 	right: 0;
 	border: none;
 	outline: none;
-	background-color:#ff7f00;
+	background-color: #ff7f00;
+	width: 40px;
 }
 
-aside {
-	border: 1px solid black;
-	float: left;
-	height: 900px;
-	width: 250px;
+div.profile {
+	cursor: pointer;
+	position: absolute;
+	left: 630px;
+	top: 6px;
+}
+
+div.content_main {
+border : 1px soild black;
+width : 
 }
 </style>
 </head>
 <body>
-	<nav>로그인 관련</nav>
 	<section>
-		<div class="container">
-			<div class="logo">
-				<img src="${rootPath}/resources/images/logo.png">
+		<div class="nav">
+			<div class="container">
+				<img class="logo" src="${rootPath}/resources/images/logo.png">
+				<div class="search">
+					<form>
+						<fieldset>
+							<input type="text" placeholder="레시피 검색!">
+							<button type="submit">
+								<i class="fa-solid fa-magnifying-glass"></i>
+							</button>
+						</fieldset>
+					</form>
+				</div>
+				<div class="profile">
+					<i class="fa-regular fa-user fa-2x fa-border"
+						style="background-color: #ff7f00; border-radius: 15px;"></i>
+				</div>
 			</div>
-			<div class="search">
-				<form>
-					<fieldset>
-						<input type="text" placeholder="레시피 검색!">
-						<button type="submit">
-							<i class="fa-solid fa-magnifying-glass"></i>
-						</button>
-					</fieldset>
-				</form>
-			</div>
-			<div class="profile">
-			<i class="fa-regular fa-user" style="background-color: #ff7f00" ></i>
-			</div>
-
+		</div>
+		<div class="content_main">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		
 		</div>
 	</section>
 </body>

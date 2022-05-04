@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<c:set value="${pageContext.request.contextPath}" var="rootPath" />
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:set value="${pageContext.request.contextPath}" var="rootPath"/>
 
 <!DOCTYPE html>
 <html>
@@ -11,6 +11,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1> 반갑습니다 </h1>
+<h1>안녕하세요</h1>
 </body>
 </html>
