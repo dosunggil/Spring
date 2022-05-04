@@ -26,28 +26,36 @@ nav {
 }
 
 section {
-	width: 100vw;
+	width: 100%;
 }
+div.container {
+padding : 0 250px;
 
+}
 div.search {
 	display: block;
-	min-width: 400px;
-	width: 30%;
-	border: 2px solid orange;
+	width: 400px;
+	border: 2px solid #ff7f00;
 	position: relative;
-}
-section div {
-	margin: 0 auto;
-
-}
-
-div.search input {
-	
 }
 
 fieldset {
 	border: none;
 	outline: none;
+}
+
+div.container {
+	display: flex;
+}
+
+div.logo {
+	height: 70px;
+	width: 200px;
+}
+
+div.logo img {
+	max-width: 100%;
+	height: auto;
 }
 
 div.search input[type=text] {
@@ -66,32 +74,38 @@ div.search button {
 	right: 0;
 	border: none;
 	outline: none;
-	background-color: orange;
+	background-color:#ff7f00;
 }
 
 aside {
-border: 1px solid black;
-float:left;
-height: 900px;
-width:250px;}
+	border: 1px solid black;
+	float: left;
+	height: 900px;
+	width: 250px;
+}
 </style>
 </head>
 <body>
 	<nav>로그인 관련</nav>
 	<section>
-		<div>
-		<aside>왼쪽 사이드 바</aside>
-		<div class="search">
-			<form>
-				<fieldset>
-					<input type="text" placeholder="레시피 검색!">
-					<button type="submit"> 
-						<i class="fa-solid fa-magnifying-glass"></i>
-					</button>
-				</fieldset>
-			</form>
-		</div>
-		
+		<div class="container">
+			<div class="logo">
+				<img src="${rootPath}/resources/images/logo.png">
+			</div>
+			<div class="search">
+				<form>
+					<fieldset>
+						<input type="text" placeholder="레시피 검색!">
+						<button type="submit">
+							<i class="fa-solid fa-magnifying-glass"></i>
+						</button>
+					</fieldset>
+				</form>
+			</div>
+			<div class="profile">
+			<i class="fa-regular fa-user" style="background-color: #ff7f00" ></i>
+			</div>
+
 		</div>
 	</section>
 </body>

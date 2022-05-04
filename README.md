@@ -1,6 +1,5 @@
 # STS 프로젝트
 
-
 ### 2022-04-29
 * 메이븐 user setting 에서, .m2 가 자주 깨지니 새로운 경로에 repository 생성 (깃허브 settings)
 * 메이븐리파지토리에서 oracle 검색 -> https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc8/21.5.0.0
@@ -22,3 +21,8 @@
 @Builder
 하나씩 import 해주기 
 ==> 롬복이 생성자 관련한 코드를 대신 해준다.
+
+# Spring MVC 프로젝트
+
+## :cat:[Spring Mybatis Project]()
+* Spring 과 Mybatis 를 사용한 DBMS 연동 프로젝트
