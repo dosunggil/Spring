@@ -20,11 +20,35 @@
 </style>
 </head>
 <body>
-	<section>
-		<div class="nav">
-			<div class="container">
+	<header>
+		<div class="top_nav">
+			<div class="logo_box">
 				<img class="logo" src="${rootPath}/resources/images/logo.png">
-				<div class="search">
+			</div>
+			<div>임시</div>
+			<div class="search_box">
+				<form>
+					<fieldset>
+						<input type="text" placeholder="레시피 검색!">
+						<button type="submit">
+							<i class="fa-solid fa-magnifying-glass"></i>
+						</button>
+					</fieldset>
+				</form>
+			</div>
+			<div class="profile">
+				<i class="ico_cookcook"
+					style="background-image: url('${rootPath}/resources/images/logo2.png') "></i>로그인
+			</div>
+		</div>
+	</header>
+
+
+	<section>
+		<div class="middle_nav">
+			<div class="container">
+				<!-- 	
+				<div class="search_box">
 					<form>
 						<fieldset>
 							<input type="text" placeholder="레시피 검색!">
@@ -33,17 +57,21 @@
 							</button>
 						</fieldset>
 					</form>
-				</div>
-				<div class="profile">
-					<i class="ico_cookcook" style="background-image: url('${rootPath}/resources/images/logo2.png') "></i>로그인
-				</div>
+				</div> -->
+			</div>
+		</div>
+		<div class="content_top">
+			<div> 손쉬운   식재료 보관법
 			</div>
 		</div>
 		<div class="content_main">
+
 			<div class="listname">
-				<h3>오늘의 <span class="font_highlight">쿡쿡</span></h3>
+				<h3>
+					오늘의 <span class="font_highlight">쿡쿡</span>
+				</h3>
 			</div>
-			<div class="listbox">
+			<div class="list_box">
 				<ul>
 					<li><a> <img
 							src="${rootPath}/resources/images/tokbokk.jpg" />
