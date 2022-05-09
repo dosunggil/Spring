@@ -1,4 +1,4 @@
-package com.cho.school;
+package com.cho.school.controller;
 
 import java.text.DateFormat;
 import java.util.Date;

@@ -25,7 +25,7 @@
 			<div class="logo_box">
 				<img class="logo" src="${rootPath}/resources/images/logo.png">
 			</div>
-			<div>임시</div>
+			<div class="cookcook">임시</div>
 			<div class="search_box">
 				<form>
 					<fieldset>
@@ -37,8 +37,8 @@
 				</form>
 			</div>
 			<div class="profile">
-				<i class="ico_cookcook"
-					style="background-image: url('${rootPath}/resources/images/logo2.png') "></i>로그인
+				<a> <img src="${rootPath}/resources/images/in.png" />
+				</a>
 			</div>
 		</div>
 	</header>
@@ -61,8 +61,7 @@
 			</div>
 		</div>
 		<div class="content_top">
-			<div> 손쉬운   식재료 보관법
-			</div>
+			<div>손쉬운 식재료 보관법</div>
 		</div>
 		<div class="content_main">
 
@@ -72,7 +71,7 @@
 				</h3>
 			</div>
 			<div class="list_box">
-				<ul>
+				<ul id="list_today">
 					<li><a> <img
 							src="${rootPath}/resources/images/tokbokk.jpg" />
 							<div>진짜 만들기 쉬운 초간단 떡볶이1</div>
@@ -80,15 +79,30 @@
 					<li><a> <img src="${rootPath}/resources/images/toast.jpg" />
 							<div>역대급 치즈 토스트!2</div>
 					</a></li>
-					<li><a> <img src="${rootPath}/resources/images/steak.jpg" />
+					<%-- <li><a> <img src="${rootPath}/resources/images/steak.jpg" />
 							<div>촉촉한 함박 스테이크 무조건 맛있게3</div>
-					</a></li>
+					</a></li> --%>
 					<li><a> <img src="${rootPath}/resources/images/pasta.jpg" />
 							<div>토마토 파슷하4</div>
 					</a></li>
 				</ul>
+				<div> 반대</div>
+				<div> ></div>
+				<div id="today">
+					<%-- <div><img src="${rootPath}/resources/images/steak.jpg" /></div>
+					<div> 설명글</div> --%>
+				
+				</div>
 			</div>
 		</div>
 	</section>
+	<footer>
+		<ul>
+			<li>조도성</li>
+			<li>안 혁</li>
+			<li>장준영</li>
+
+		</ul>
+	</footer>
 </body>
 </html>
