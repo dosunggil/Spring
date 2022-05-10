@@ -19,7 +19,7 @@ margin: 5px auto;
 text-align: right;}
 
 </style>
-<script src="${rootPath}/resources/js/list.js?ver=2022-05-09-001"></script>
+<script src="${rootPath}/resources/js/std_list.js?ver=2022-05-10-001"></script>
 <table>
 	<tr>
 		<th>학번</th>
@@ -32,5 +32,9 @@ text-align: right;}
 
 <div class ="btn-box">
 	<button class="btn-blue std-input" >학생정보 등록</button>
+	<form action="${rootPath}/score">
+		<button type="button"
+		class="btn-red">서버로 보내기</button>
+	</form>
 
 </div>

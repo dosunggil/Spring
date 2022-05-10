@@ -113,7 +113,7 @@ button.btn-orange {
 	// js 변수로 선언
 	const rootPath="${rootPath}"
 </script>
-<script src="${rootPath}/resources/nav.js?ver=2022-05-09-005"></script>
+<script src="${rootPath}/resources/js/nav.js?ver=2022-05-10-001"></script>
 </head>
 <body>
 	<header>
