@@ -42,7 +42,7 @@
 ## JSP 에 View Rendering 수행
 
 # 2022-05-12 mybatis-context 설정하기 (Spring 에 DB 연결 작업)
-*[링크]()
+*[링크](https://github.com/dosunggil/Spring/blob/master/SpMVC_003_SchoolV6/src/main/webapp/WEB-INF/spring/appServlet/mybatis-context.xml)
 ```
  appServlet 폴더에서 Spring bean configuration file 새 파일 생성 해서
 
