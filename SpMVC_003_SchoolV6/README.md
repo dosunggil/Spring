@@ -40,3 +40,24 @@
 ## Service 에 받고
 ## Controller 로 return 하고
 ## JSP 에 View Rendering 수행
+
+# 2022-05-12 mybatis-context 설정하기 (Spring 에 DB 연결 작업)
+*[링크]()
+```
+ appServlet 폴더에서 Spring bean configuration file 새 파일 생성 해서
+
+beans
+context
+mybatis-spring 
+
+각각 항목 눌러서 가장 아래의 4.3xsd 체크
+
+
+ ```
+ * 베이스.dao 패키지에 StudentDao 인터페이스 생성
+
+ * web.xml 에서 servlet-context -> 별-context 로 변경
+ ```
+ 			<param-value>/WEB-INF/spring/appServlet/*-context.xml</param-value>
+```
+

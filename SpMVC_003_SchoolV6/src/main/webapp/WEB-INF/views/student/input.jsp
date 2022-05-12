@@ -32,26 +32,33 @@ form input {
 }
 
 form div:last-of-type {
-	align-items: flex-end;
 	justify-content:flex-end;
 	margin: 10px auto;
 }
+form div:first-of-type div {
+	flex:3;
+	margin: 0px;
+}
 form div:first-of-type input{
 	flex:2;
-	margin-right:10px;
+	margin : 0;
 }
 form div:first-of-type button{
-	flex:1;
+	margin-left:5px;
 }
 </style>
 <script>
 	const rootPath="${rootPath}"
 </script>
-<script src="${rootPath}/resources/js/std_input.js?ver=2022-05-10-021"></script>
+<script src="${rootPath}/resources/js/std_input_save.js?ver=2022-05-12-002"></script>
+<script src="${rootPath}/resources/js/std_input.js?ver=2022-05-12-002"></script>
 <h1>학생정보 등록</h1>
 <form method="POST">
 	<div>
-		<label>학번</label> <input type="text" name="st_num"><button type="button" class="btn-green std-num-check">중복검사</button>
+		<label>학번</label> 
+		<div>
+		<input type="text" name="st_num"><button type="button" class="btn-green std-num-check">중복검사</button>
+		</div>
 	</div>
 	<div>
 		<label>이름</label> <input type="text" name="st_name">
