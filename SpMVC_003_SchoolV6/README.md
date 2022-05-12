@@ -32,14 +32,13 @@
 </form>
 ```
 
-## Controller 에 데이터를 수신할 method 처리
-## Service 로 데이터 전송
-## Dao 를 통해서 DBMS에 insert 요청
-
-## Dao 를 통해서 DBMS 에게 Select 요청
-## Service 에 받고
-## Controller 로 return 하고
-## JSP 에 View Rendering 수행
+1. Controller 에 데이터를 수신할 method 처리
+2. Service 로 데이터 전송
+3. Dao 를 통해서 DBMS에 insert 요청
+4. Dao 를 통해서 DBMS 에게 Select 요청
+5. Service 에 받고
+6. Controller 로 return 하고
+7. JSP 에 View Rendering 수행
 
 # 2022-05-12 mybatis-context 설정하기 (Spring 에 DB 연결 작업)
 *[링크](https://github.com/dosunggil/Spring/blob/master/SpMVC_003_SchoolV6/src/main/webapp/WEB-INF/spring/appServlet/mybatis-context.xml)

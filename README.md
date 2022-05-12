@@ -26,3 +26,6 @@
 
 ## :cat:[Spring Mybatis Project](https://github.com/dosunggil/Spring/tree/master/SpMVC_003_SchoolV5)
 * Spring 과 Mybatis 를 사용한 DBMS 연동 프로젝트
+
+# mybatis-context 설정하기 (Spring 에 DB 연결 작업)
+* [링크](https://github.com/dosunggil/Spring/tree/master/SpMVC_003_SchoolV6)
