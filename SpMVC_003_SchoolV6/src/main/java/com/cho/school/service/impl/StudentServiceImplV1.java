@@ -8,12 +8,17 @@ import com.cho.school.dao.StudentDao;
 import com.cho.school.model.StudentVO;
 import com.cho.school.service.StudentService;
 
+import lombok.extern.slf4j.Slf4j;
+
 /*
  * StudentService stService = new StudetServiceImplV1
  */
+@Slf4j
 @Service("stServiceV1")
 public class StudentServiceImplV1 implements StudentService{
 
+	
+	
 	/*
 	 * 생성자 주입
 	 */

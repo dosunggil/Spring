@@ -6,19 +6,9 @@ const std_num_check_cb = () => {
     return false;
   }
   // alert("입력한 학번 : " + st_num.value);
-
-  fetch(`${rootPath}/student/st_num_check?st_num=${st_num.value}`)
-    .then((res) => res.text())
-    .then((result) => {
-      if (result == "USE") {
-        alert("중복입니다.\n 다시 입력하세요.");
-      } else {
-        alert("사용 가능한 학번입니다.");
-      }
-    });
-
-  const st_name = document.querySelector("input[name='st_name']");
-  st_name.focus();
+  if (!std_num_check_cb(st_num.value)) {
+    st_num.focus();
+  }
 };
 
 /*
