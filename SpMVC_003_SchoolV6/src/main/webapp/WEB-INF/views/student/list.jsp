@@ -24,10 +24,15 @@ text-align: right;}
 	<tr>
 		<th>학번</th>
 		<th>이름</th>
-		<th>학과</th>
-		<th>학년</th>
 		<th>전화번호</th>
 	</tr>
+	<c:forEach items="${ST_LIST}" var="ST">
+		<tr>
+			<td>${ST.st_num}</td>
+			<td>${ST.st_name}</td>
+			<td>${ST.st_tel}</td>
+		</tr>
+	</c:forEach>
 </table>
 
 <div class ="btn-box">

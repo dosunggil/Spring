@@ -47,11 +47,9 @@ form div:first-of-type button{
 	margin-left:5px;
 }
 </style>
-<script>
-	const rootPath="${rootPath}"
-</script>
-<script src="${rootPath}/resources/js/std_input_save.js?ver=2022-05-13-002"></script>
-<script src="${rootPath}/resources/js/std_input.js?ver=2022-05-13-002"></script>
+
+<script src="${rootPath}/resources/js/std_input_save.js?ver=2022-05-16-018"></script>
+<script src="${rootPath}/resources/js/std_input.js?ver=2022-05-16-018"></script>
 <h1>학생정보 등록</h1>
 <form method="POST">
 	<div>

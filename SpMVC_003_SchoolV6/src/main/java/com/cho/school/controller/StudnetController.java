@@ -36,20 +36,21 @@ public class StudnetController {
 	
 	// localhost:8080/school/student 또는
 	// localhost:8080/school/student/ 로 요청을 받을 때
-	@RequestMapping(value= {"","/"}, method = RequestMethod.GET)
+	@RequestMapping(value= {"","/"}, method=RequestMethod.GET)
 	public String list(Model model) {
-		List<StudentVO> stList = stService.selecAll();
+		List<StudentVO> stList = stService.selectAll();
 		
 		model.addAttribute("ST_LIST", stList);
 		model.addAttribute("LAYOUT","ST_LIST");
 		return "home";
+		
 	}
-	
-	@RequestMapping(value= "/input", method = RequestMethod.GET)
+	@RequestMapping(value= "/input", method=RequestMethod.GET)
 	public String input(Model model) {
 		model.addAttribute("LAYOUT","ST_INPUT");
 		return "home";
 	}
+	
 	
 	/*
 	 * form 에서 input 에 담긴 데이터를 수신하는 method

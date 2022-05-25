@@ -1,5 +1,6 @@
 package com.cho.school.controller;
 
+import java.util.List;
 import java.util.Locale;
 
 import org.springframework.stereotype.Controller;
@@ -7,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.cho.school.model.StudentVO;
 import com.cho.school.service.StudentService;
 
 import lombok.extern.slf4j.Slf4j;
@@ -32,12 +34,9 @@ public class HomeController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 		
-		log.trace("Hellotrace");
-		log.debug("Hello");
-		log.info("Helloinfo");
-		log.warn("Hellowarn");
-		log.error("Helloerror");
-
+		List<StudentVO> stList = stService.selectAll();
+		model.addAttribute("ST_LIST",stList);
+		
 		return "home";
 	}
 

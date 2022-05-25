@@ -28,8 +28,8 @@ public class StudentServiceImplV1 implements StudentService{
 	}
 	
 	@Override
-	public List<StudentVO> selecAll() {
-		return stDao.selecAll();
+	public List<StudentVO> selectAll() {
+		return stDao.selectAll();
 	}
 
 	@Override

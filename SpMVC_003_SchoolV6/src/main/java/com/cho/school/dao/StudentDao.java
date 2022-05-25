@@ -12,7 +12,7 @@ import com.cho.school.model.StudentVO;
 public interface StudentDao {
 
 	@Select(" SELECT * FROM tbl_student ")
-	public List<StudentVO> selecAll();
+	public List<StudentVO> selectAll();
 	
 	@Select(" SELECT * FROM tbl_student WHERE st_num = #{st_num} ")
 	public StudentVO findByNum(String st_num);
@@ -23,7 +23,7 @@ public interface StudentDao {
 	@Update(SQL.STUDENT.UPDATE)
 	public int update(StudentVO stVO);
 	
-	@Delete(" DELETE FROM tbl_student WHERE st_num = #{st_num}")
+	@Delete(" DELETE  FROM tbl_student WHERE st_num = #{st_num}")
 	public int delete(String st_num);
 	
 }

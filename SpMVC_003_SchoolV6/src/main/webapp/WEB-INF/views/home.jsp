@@ -79,39 +79,47 @@ footer {
 	text-align: center;
 	padding: 0.9rem
 }
+
 button {
-	border:none;
+	border: none;
 	outline: none;
 	padding: 12px 16px;
 	border-radius: 5px;
 }
 
 button:hover {
-box-shadow:2px 2px 2px rgba(0,0,0,0.7);
+	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
 }
-button.btn-blue {
 
+button.btn-blue {
 	background-color: blue;
-	color : white;
-	}
+	color: white;
+}
+
 button.btn-green {
 	background-color: green;
-	color : white;
-	}
+	color: white;
+}
+
 button.btn-red {
 	background-color: red;
-	color : white;
-	}
+	color: white;
+}
+
 button.btn-orange {
 	background-color: orange;
-	color : white;
-	}
-</style>
-<script >
+	color: white;
+}
 
+article.st-list {
+	overflow: auto;	
+	max-height: 80vh;
+}
+</style>
+<script>
 	// jsp 의 속성(변수) 값을 js 로 보내기 위해
 	// js 변수로 선언
-	const rootPath="${rootPath}"
+	const rootPath = "${rootPath}"
 </script>
 <script src="${rootPath}/resources/js/nav.js?ver=2022-05-10-001"></script>
 </head>
@@ -133,16 +141,18 @@ button.btn-orange {
 		<c:choose>
 			<c:when test="${LAYOUT == 'ST_LIST'}">
 				<article>
-				<%@ include file="/WEB-INF/views/student/list.jsp"%>
+					<%@ include file="/WEB-INF/views/student/list.jsp"%>
 				</article>
 			</c:when>
 			<c:when test="${LAYOUT == 'ST_INPUT'}">
 				<article>
-				<%@ include file="/WEB-INF/views/student/input.jsp"%>
+					<%@ include file="/WEB-INF/views/student/input.jsp"%>
 				</article>
 			</c:when>
 			<c:otherwise>
-				<article></article>
+				<article class="st-list">
+					<%@ include file="/WEB-INF/views/student/list.jsp"%>
+				</article>
 				<article></article>
 				<article></article>
 			</c:otherwise>
