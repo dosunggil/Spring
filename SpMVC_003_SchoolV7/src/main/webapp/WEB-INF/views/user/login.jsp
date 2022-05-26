@@ -47,6 +47,7 @@ box-sizing: content-box;}
 			<button>로그인</button>
 		</fieldset>
 	</form>
+	<a href="${rootPath}/user/join">회원가입 바로가기</a>
 	<div class="login-info">
 		<c:if test="${not empty USER}">
 			<div><b>ID : </b> ${USER.username}</div>
