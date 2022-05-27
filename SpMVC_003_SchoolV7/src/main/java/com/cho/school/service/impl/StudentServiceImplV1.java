@@ -2,10 +2,13 @@ package com.cho.school.service.impl;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.cho.school.model.StudentVO;
 import com.cho.school.pesistance.StudentDao;
 import com.cho.school.service.StudentService;
 
+@Service
 public class StudentServiceImplV1 implements StudentService{
 
 	private final StudentDao stDao;
@@ -20,9 +23,9 @@ public class StudentServiceImplV1 implements StudentService{
 	}
 
 	@Override
-	public StudentVO findByID(String id) {
-		// TODO Auto-generated method stub
-		return null;
+	public StudentVO findById(String id) {
+		return stDao.findById(id);
+		
 	}
 
 	@Override

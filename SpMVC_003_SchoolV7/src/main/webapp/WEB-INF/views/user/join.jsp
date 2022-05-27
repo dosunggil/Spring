@@ -47,25 +47,25 @@ form input {
 <script>
 	const rootPath = "${rootPath}"
 </script>
-<script src="${rootPath}/resources/js/join.js?ver=0007"></script>
+<script src="${rootPath}/resources/js/join.js?ver=017"></script>
 
 </head>
 <body>
-	<form class="join">
+	<form class="join" method="POST">
 		<fieldset>
 			<legend>회원가입</legend>
 			<div>
-				<input name="username" placeholder="USER NAME" autocomplete="none">
+				<input name="username" placeholder="USER NAME" autocomplete="off">
 				<button type="button" class="id-check">중복검사</button>
 			</div>
 			<div class="username"></div>
 			<div>
 				<input name="password" type="password" placeholder="PASSWORD"
-					autocomplete="none">
+					autocomplete="off">
 			</div>
 			<div>
 				<input name="re_password" type="password"
-					placeholder="PASSWORD CHECK" autocomplete="none">
+					placeholder="PASSWORD CHECK" >
 			</div>
 			<div>
 				<input name="name" placeholder="이름" />
