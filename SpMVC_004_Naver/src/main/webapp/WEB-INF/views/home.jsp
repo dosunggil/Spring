@@ -14,7 +14,6 @@
 <body>
 	<form method="POST">
 		<input name="title" placeholder="도서명 입력">
-	
 	</form>
 </body>
 </html>
