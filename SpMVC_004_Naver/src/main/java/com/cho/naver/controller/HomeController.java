@@ -6,6 +6,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.cho.naver.service.exec.NaverBookServiceEx;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -21,10 +24,16 @@ public class HomeController {
 		return "home";
 	}
 	
+	@ResponseBody
 	@RequestMapping(value="/", method=RequestMethod.POST)
 	public String home(String title, Model model) {
 		log.debug("도서명 : "+ title);
-		return "home";
+		
+		NaverBookServiceEx naverService = new NaverBookServiceEx();
+		String queryString = naverService.queryString("BOOK", title);
+		String resString = naverService.getJsonString(queryString);
+		
+		return resString;
 	}
 	
 }
