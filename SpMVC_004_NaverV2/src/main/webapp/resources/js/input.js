@@ -24,7 +24,10 @@ document.addEventListener("DOMContentLoaded", () => {
       // alert(e.target.value);
       fetch(`${rootPath}/naver/books?title=${e.target.value}`)
         .then((res) => res.text())
-        .then((result) => {});
+        .then((result) => {
+          modal_box.style.display = "flex";
+          modal_box.innerHTML = result;
+        });
     }
   });
 });
