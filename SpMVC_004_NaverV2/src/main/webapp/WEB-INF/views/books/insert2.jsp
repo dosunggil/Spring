@@ -28,6 +28,6 @@
 	
 	<a href="${rootPath}/books/insert">저장</a>
 	<a href="${rootPath}/books/detail">새로작성</a>
-	<a href="${rootPath}/books/insert">리스트보기</a>
+	<a href="${rootPath}/books/list">리스트보기</a>
 </body>
 </html>

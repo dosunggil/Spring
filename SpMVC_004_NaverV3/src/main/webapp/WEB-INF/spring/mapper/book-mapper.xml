@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="com.cho.naver.persistance.BookDao">
+	<select id="selectAll" resultType="BookVO">
+		Select * From tbl_books order by isbn
+	</select>
+	<select id="findById" resultType="BookVO">
+		Select * from tbl_books where isbn = #{isbn}
+	</select>
+	<insert id="insert" parameterType="BookVO">
+		insert into tbl_books(	
+			isbn,
+			title,
+			author,
+			publisher,
+			price,
+			discount,
+			description,
+			pubdate,
+			link,
+			image
+			)
+		values 
+			(
+			#{isbn},
+			#{title},
+			#{author},
+			#{publisher},
+			#{price, jdbcType=VARCHAR},
+			#{discount, jdbcType=VARCHAR},
+			#{description, jdbcType=VARCHAR},
+			#{pubdate, jdbcType=VARCHAR},
+			#{link, jdbcType=VARCHAR},
+			#{image, jdbcType=VARCHAR}
+			)
+	</insert>
+
+	<!-- 
+		<Mybatis 를 연동한 insert 수행에서
+		부적절한 열유형 1111 오류가 발생하는 경우>
+		
+		보통 form 에서 전체 데이터를 추가하지 않고
+		일부만 입력된 상태로 insert 에게 전달되는 경우에 발생한다.
+	 -->
+
+	<update id="update" parameterType="BookVO">
+		update tbl_books set 
+				title = #{title},
+				author = #{author},
+				publisher = #{publisher},
+				price = #{price},
+				discount = #{discount},
+				description = #{description},
+				pubdate = #{pubdate},
+				link = #{link},
+				image = #{image}
+		where	isbn = #{isbn}
+	</update>
+	<delete id="delete">
+		delete from tbl_books where isbn = #{isbn}
+	
+	</delete>	
+	
+	
+	<select id="create_book_table">
+	create table  tbl_books (
+		isbn	varchar2(13) primary key,
+		title	nvarchar2(50) not null,
+		author	nvarchar2(50) not null,
+		publisher	nvarchar2(50) not null,
+		price	number,
+		discount	number,
+		description	nvarchar2(2000),
+		pubdate	varchar2(10),
+		link	varchar2(125),
+		image	varchar2(125)
+	)
+	</select>
+
+</mapper>
+
