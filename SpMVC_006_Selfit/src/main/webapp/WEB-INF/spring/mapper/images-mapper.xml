@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="com.cho.images.persistance.ImagesDao">
+	
+	<select id="create_images_table">
+	
+		create table  tbl_images(
+			i_seq 			Number 		Primary key,
+			i_bseq			Number		not null,
+			i_originalName	varchar2(255) not null,
+			i_imageName		varchar2(255) not null
+		)
+	</select>
+
+</mapper>
+

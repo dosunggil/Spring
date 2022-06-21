@@ -49,7 +49,8 @@ public class BookController {
 		 */
 		log.debug(bookList.toString());
 		model.addAttribute("BOOKS", bookList);
-		return null;
+		model.addAttribute("LAYOUT", "BOOK-LIST");
+		return "home";
 	}
 
 	/*
@@ -80,9 +81,9 @@ public class BookController {
 	}
 
 	@RequestMapping(value = "/insert2", method = RequestMethod.GET)
-	public String insert2() {
-
-		return null;
+	public String insert2(Model model) {
+		model.addAttribute("LAYOUT", "BOOK-INPUT");
+		return "home";
 	}
 
 	/*
@@ -112,8 +113,8 @@ public class BookController {
 	public String detail(@PathVariable("isbn") String isbn,Model model) {
 		BookVO bookVO = bookService.findById(isbn);
 		model.addAttribute("BOOK",bookVO);
-		
-		return "books/detail";
+		model.addAttribute("LAYOUT", "BOOK-DETAIL");
+		return "home";
 	}
 	
 	/*
@@ -124,8 +125,8 @@ public class BookController {
 	public String update(@PathVariable("isbn") String isbn, Model model) {
 		BookVO bookVO = bookService.findById(isbn);
 		model.addAttribute("BOOK", bookVO);
-		
-		return "books/insert2";
+		model.addAttribute("LAYOUT", "BOOK-INPUT");
+		return "home";
 	}
 	
 	@RequestMapping(value="/{isbn}/update",method=RequestMethod.POST)

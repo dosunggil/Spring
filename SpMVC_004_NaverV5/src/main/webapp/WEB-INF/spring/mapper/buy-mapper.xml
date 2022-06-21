@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="com.cho.naver.persistance.BuyBookDao">
+	<select id="selectAll" resultType="BuyBookVO">
+		Select * From tbl_buybooks
+	</select>
+	<select id="findById" resultType="BuyBookVO">
+		Select * from tbl_buybooks where b_isbn = #{isbn}
+	</select>
+
+	<select id="findByIsbnAndUserName" resultType="BuyBookVO">
+		Select * from tbl_buybooks where b_isbn = #{isbn} And b_username = #{username}
+	</select>
+
+	<select id="findByUserName" resultType="BuyBookVO">
+		Select * from tbl_buybooks where b_username = #{username}
+	</select>
+
+	<select id="findByIsbn" resultType="BuyBookVO">
+		Select * from tbl_buybooks where b_isbn = #{isbn}
+	</select>
+	<insert id="insert" parameterType="BuyBookVO">
+		insert into tbl_buybooks(	
+			b_isbn,
+			b_username,
+			b_date
+			)
+		values 
+			(
+			#{b_isbn},
+			#{b_username},
+			#{b_date}
+			)
+	</insert>
+
+	<!-- 
+		<Mybatis 를 연동한 insert 수행에서
+		부적절한 열유형 1111 오류가 발생하는 경우>
+		
+		보통 form 에서 전체 데이터를 추가하지 않고
+		일부만 입력된 상태로 insert 에게 전달되는 경우에 발생한다.
+	 -->
+
+	<update id="update" parameterType="BuyBookVO">
+		update tbl_books set 
+				title = #{title},
+				author = #{author},
+				publisher = #{publisher},
+				price = #{price},
+				discount = #{discount},
+				description = #{description},
+				pubdate = #{pubdate},
+				link = #{link},
+				image = #{image}
+		where	isbn = #{isbn}
+	</update>
+	<delete id="delete">
+		delete from tbl_books where b_isbn = #{isbn} And b_username =#{username}
+	
+	</delete>	
+	
+	
+	<select id="create_buy_table">
+	create table  tbl_books (
+		b_isbn		varchar2(13) not null,
+		b_username	nvarchar2(20) not null,
+		b_date		varchar2(10),
+		primary key(b_isbn, b_username),
+		CONSTRAINT FK_BUY_BOOKS FOREIGN key (b_isbn) REFERENCES tbl_books(isbn),
+		CONSTRAINT FK_BUY_USERS FOREIGN key (b_username) REFERENCES tbl_users(username)
+	)
+	</select>
+
+</mapper>
+

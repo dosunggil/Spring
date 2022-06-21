@@ -8,10 +8,47 @@
 <%@ include file="/WEB-INF/views/books/head.jsp" %>
 <body>
 	<%@ include file="/WEB-INF/views/books/header.jsp"%>
-	<section class="main"></section>
+	<section class="main">
+		<c:choose>
+			<c:when test="${LAYOUT=='BOOK-INPUT'}">
+			<%@ include file="/WEB-INF/views/books/insert2.jsp" %>
+			</c:when>
+			<c:when test="${LAYOUT=='BOOK-LIST'}">
+			<%@ include file="/WEB-INF/views/books/list.jsp" %>
+			</c:when>
+			<c:when test="${LAYOUT=='BOOK-DETAIL'}">
+			<%@ include file="/WEB-INF/views/books/detail.jsp" %>
+			</c:when>
+		</c:choose>
+	
+	
+	</section>
 
-	<footer>
+	<footer class="main">
 		<address>Copyright &copy; chothegenius@gmail.com</address>
 	</footer>
+	<div class="w3-modal modal-result">
+		<div class="w3-modal-content w3-card-4">
+			<header class="w3-container w3-teal">
+				<span class="w3-button w3-display-topright modal-close">&times;</span>
+				<h2>도서 검색 정보</h2>
+			</header>
+			<div class="w3-container search-content">
+				<p>여기는 검색결과가 보여지는 곳
+			</div>
+			<footer class="w3-container w3-teal">
+				<address>Copyright &copy; chothegenius@gmail.com</address>
+			</footer>
+		</div>
+		<script>
+			document.querySelector("span.modal-close")?.addEventListener("click",()=>{
+				document.querySelector("div.w3-modal.modal-result").style.display="none"
+			})
+			
+			document.querySelector("footer.main").addEventListener("click",()=>{
+				document.querySelector("div.modal-result").style.display='block'
+			})
+		</script>
+	</div>
 </body>
 </html>
