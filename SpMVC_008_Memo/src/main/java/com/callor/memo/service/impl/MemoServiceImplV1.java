@@ -2,6 +2,7 @@ package com.callor.memo.service.impl;
 
 import java.io.File;
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ResourceLoader;
@@ -19,11 +20,11 @@ import lombok.extern.slf4j.Slf4j;
 public class MemoServiceImplV1 implements MemoService {
 
 	private final MemoDao memodao;
-	private final ResourceLoader resourceLoader;
+	private final String upPath;
 
-	public MemoServiceImplV1(MemoDao memodao, ResourceLoader resourceLoader) {
+	public MemoServiceImplV1(String upPath, MemoDao memodao) {
 		this.memodao = memodao;
-		this.resourceLoader = resourceLoader;
+		this.upPath = upPath;
 	}
 
 	@Override
@@ -44,7 +45,7 @@ public class MemoServiceImplV1 implements MemoService {
 		}
 
 	}
-	
+
 	@Override
 	public String updateMemoAndFile(MemoVO memoVO, MultipartFile file) {
 		int seq = memoVO.getM_seq();
@@ -62,8 +63,7 @@ public class MemoServiceImplV1 implements MemoService {
 			log.debug("FILE UP FAIL");
 			return "FILE UP FAIL";
 		}
-		
-		
+
 	}
 
 	@Autowired
@@ -106,18 +106,16 @@ public class MemoServiceImplV1 implements MemoService {
 			log.debug("파일이 없어서 그냥 끝냈음");
 			return null;
 		}
-		String upLoadPath = resourceLoader.getResource("/static/upload").getURI().getPath();
-		log.debug("업로드 패쓰" + upLoadPath);
-
-		String fileName = file.getOriginalFilename();
-
-		File dir = new File(upLoadPath);
-
+		File dir = new File(upPath);
 		if (!dir.exists()) {
 			dir.mkdirs();
 		}
 
-		File upLoadFile = new File(upLoadPath, fileName);
+		String fileName = file.getOriginalFilename();
+		String strUUID = UUID.randomUUID().toString();
+
+		fileName = String.format("%s-%s", strUUID, fileName);
+		File upLoadFile = new File(upPath,fileName);
 		file.transferTo(upLoadFile);
 		return fileName;
 	}
@@ -127,7 +125,5 @@ public class MemoServiceImplV1 implements MemoService {
 		// TODO Auto-generated method stub
 		return false;
 	}
-
-	
 
 }

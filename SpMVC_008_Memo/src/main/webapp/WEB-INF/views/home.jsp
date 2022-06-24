@@ -8,6 +8,11 @@
 <html>
 <%@ include file="/WEB-INF/views/include/head.jsp"%>
 <body>
+	<header>
+		<div class="top-nav">
+			<a href="${rootPath}/">성길이의 메모장</a>
+		</div>
+	</header>
 	<main>
 		<table class="memo-list">
 			<c:forEach items="${MEMO}" var="MEMO">

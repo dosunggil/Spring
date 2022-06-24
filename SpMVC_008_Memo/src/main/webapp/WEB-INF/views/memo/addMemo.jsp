@@ -10,7 +10,9 @@
 <body>
 <form method="POST" enctype="multipart/form-data">
 	<h1>메모 추가하기</h1>
-		<input hidden="hidden" name="m_seq" value="${MEMOVO.m_seq}">
+	
+		<input hidden="hidden" name="m_seq" value='<c:out value="${MEMOVO.m_seq }" default="0" ></c:out>' >
+	
 		<textarea rows="6" placeholder="메모 내용" name="m_memo" >${MEMOVO.m_memo}</textarea>
 		<!-- <input type="file" name="mfile" multiple="multiple" accept="images/*"> -->
 		
