@@ -13,7 +13,7 @@
 	${MEMOVO.m_date} <br>
 	${MEMOVO.m_time} <br>
 	${MEMOVO.m_memo} <br>
-	<img src ="${rootPath}/upload/${MEMOVO.m_image.f_imageName}"> <br>
+	<img src ="${rootPath}/upload/${MEMOVO.m_image}"> <br>
 	
 	<div><a href="${rootPath}/memo/${MEMOVO.m_seq}/update">수정하기</a></div>
 	<div><a href="${rootPath}/memo/${MEMOVO.m_seq}/delete">삭제하기</a></div>

@@ -16,24 +16,30 @@
  	 	
  	<insert id="insert" parameterType="MemoVO" useGeneratedKeys="true" keyProperty="m_seq">
  		insert into tbl_memo (
- 			m_seq,
+ 		
 			m_author,
 			m_date ,
 			m_time	,
-			m_memo	
+			m_memo	,
+			m_image
  		) values (
- 			#{m_seq},
+ 			
 			#{m_author},
 			#{m_date},
 			#{m_time},
-			#{m_memo}
- 		)  ON DUPLICATE KEY UPDATE
- 			m_date =#{m_date},
-			m_time	=#{m_time},
-			m_memo	=#{m_memo}
+			#{m_memo},
+			#{m_image}
+ 		)  
  	
  	</insert>
- 	<update id="update"></update>
+ 	<update id="update" parameterType="MemoVO">
+ 		update tbl_memo set
+ 			m_date = #{m_date},
+			m_time	= #{m_time},
+			m_memo	= #{m_memo},
+			m_image = #{m_image}
+				where	m_seq= #{m_seq}
+ 	</update>
  	
  	<delete id="delete">
  		delete from tbl_memo where m_seq= #{m_seq}

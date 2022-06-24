@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.callor.memo.model.MemoVO;
-import com.callor.memo.persistance.FileDao;
 import com.callor.memo.service.MemoService;
 
 import lombok.extern.slf4j.Slf4j;
@@ -23,14 +22,11 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Controller
 @RequestMapping(value = "/memo")
-@SessionAttributes("memoVO")
 public class MemoController {
 
 	@Autowired
 	private MemoService memoService;
 
-	@Autowired
-	private FileDao fileDao;
 
 	@RequestMapping(value = "/addMemo", method = RequestMethod.GET)
 	public String addMemo(MemoVO memoVO) {
@@ -50,7 +46,6 @@ public class MemoController {
 	@RequestMapping(value = "/{seq}/detail", method = RequestMethod.GET)
 	public String detail(@PathVariable("seq") int seq, Model model) {
 		MemoVO memoVO = memoService.findById(seq);
-		memoVO.setM_image(fileDao.findByMemoSeq(seq));
 		model.addAttribute("MEMOVO", memoVO);
 		return "memo/detail";
 	}
@@ -71,9 +66,8 @@ public class MemoController {
 	}
 
 	@RequestMapping(value = "/{seq}/update", method = RequestMethod.POST)
-	public String update(@ModelAttribute("memoVO") MemoVO memoVO, @RequestParam("mfile") MultipartFile file) {
-		memoService.insertMemoAndFile(memoVO, file);
-
+	public String update(MemoVO memoVO, @RequestParam("mfile") MultipartFile file) {
+		memoService.updateMemoAndFile(memoVO, file);
 		return "redirect:/";
 	}
 

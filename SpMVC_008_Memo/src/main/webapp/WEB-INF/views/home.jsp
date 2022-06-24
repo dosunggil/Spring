@@ -8,7 +8,7 @@
 <html>
 <%@ include file="/WEB-INF/views/include/head.jsp"%>
 <body>
-	<div>
+	<main>
 		<table class="memo-list">
 			<c:forEach items="${MEMO}" var="MEMO">
 				<tr data-seq="${MEMO.m_seq}">
@@ -21,7 +21,6 @@
 		<div>
 			<a href="${rootPath}/memo/addMemo"> 메모 추가하기</a>
 		</div>
-
-	</div>
+	</main>
 </body>
 </html>

@@ -19,5 +19,5 @@ public class MemoVO {
 	private String 	m_date 	; //체크
 	private String m_time	; //체크
 	private String m_memo	; // 입력
-	private FileVO m_image;	
+	private String m_image;	
 }
