@@ -17,6 +17,9 @@
 		<div class="full-container">
 			<div class="memo-listbox">
 				<div class="btn-addMemo">+</div>
+				<c:if test="${empty MEMO}">
+					<div class="div-memo-empty">메모장이 비어있어요..  </div>
+				</c:if>
 				<table class="memo-list">
 					<c:forEach items="${MEMO}" var="MEMO">
 						<tr data-seq="${MEMO.m_seq}">

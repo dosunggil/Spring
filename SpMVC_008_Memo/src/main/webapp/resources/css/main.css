@@ -87,3 +87,7 @@ div.div-memo {
 .btn-addMemo:hover {
 	cursor: pointer;
 }
+
+.div-memo, .div-memo-empty {
+	text-align: right;
+}

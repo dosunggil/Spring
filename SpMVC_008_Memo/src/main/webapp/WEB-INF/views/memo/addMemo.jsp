@@ -14,8 +14,7 @@
 					value='<c:out value="${MEMOVO.m_seq }" default="0" ></c:out>'>
 
 				<div class="title-box addMemo-box">
-					<input class="input" placeholder="새 메모" name="m_title"
-						value="${MEMOVO.m_title}" />
+					<input class="input" placeholder="새 메모" name="m_title" value="${MEMOVO.m_title}" />
 					<div class="date-time">${MEMOVO.m_date} - ${MEMOVO.m_time}
 					</div>
 				</div>
@@ -35,7 +34,7 @@
 							for="cho-photo">사진 선택</label>
 					</div>
 					<button class="button">저장</button>
-					<button class="button" type="reset">RESET</button>
+					<a class="button" href="${rootPath}/memo/${MEMOVO.m_seq}/delete">삭제</a>
 				</div>
 
 			</div>
