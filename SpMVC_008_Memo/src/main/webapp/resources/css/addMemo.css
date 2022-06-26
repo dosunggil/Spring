@@ -49,6 +49,9 @@ div.img-box img {
 .btn-edit-photo {
 	    margin-right: auto;
 }
+.btn-edit-photo:hover {
+	cursor: pointer;
+	}
 .button-container .button:not(:first-child) {
 	margin-left: 5px;
 }
