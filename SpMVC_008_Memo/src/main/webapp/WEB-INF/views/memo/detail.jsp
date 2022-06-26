@@ -6,18 +6,21 @@
 
 <!DOCTYPE html>
 <html>
-<%@ include file="/WEB-INF/views/include/head.jsp"%>
 <body>
-<div>
-	${MEMOVO.m_author} <br>
-	${MEMOVO.m_date} <br>
-	${MEMOVO.m_time} <br>
-	${MEMOVO.m_memo} <br>
-	<img src ="${rootPath}/upload/${MEMOVO.m_image}"> <br>
-	
-	<div><a href="${rootPath}/memo/${MEMOVO.m_seq}/update">수정하기</a></div>
-	<div><a href="${rootPath}/memo/${MEMOVO.m_seq}/delete">삭제하기</a></div>
+	<div class="detail-main">
+		<div class="detail-container">
+			<div class="detail-title-box detail-box">${MEMOVO.m_title}</div>
+			<div class="detail-memo-box detail-box" >${MEMOVO.m_memo}</div>
+			<div class="img-box detail-box">
+				<img src="${rootPath}/upload/${MEMOVO.m_image}"
+				 onerror="this.onerror=null; this.style.display='none'">
+			</div>
+			<div>
+				<div class="btn-Update" data-seq="${MEMOVO.m_seq}">수정</div>
+				<a class="button" href="${rootPath}/memo/${MEMOVO.m_seq}/delete">삭제</a>
+			</div>
+		</div>
 
-</div>
+	</div>
 </body>
 </html>

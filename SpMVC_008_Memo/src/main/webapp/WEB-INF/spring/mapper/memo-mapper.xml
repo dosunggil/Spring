@@ -20,6 +20,7 @@
 			m_author,
 			m_date ,
 			m_time	,
+			m_title,
 			m_memo	,
 			m_image
  		) values (
@@ -27,6 +28,7 @@
 			#{m_author},
 			#{m_date},
 			#{m_time},
+			#{m_title},
 			#{m_memo},
 			#{m_image}
  		)  
@@ -36,6 +38,7 @@
  		update tbl_memo set
  			m_date = #{m_date},
 			m_time	= #{m_time},
+			m_title	= #{m_title},
 			m_memo	= #{m_memo},
 			m_image = #{m_image}
 				where	m_seq= #{m_seq}
@@ -54,6 +57,7 @@
 			m_author 	VARCHAR(25) NOT NULL,
 			m_date 		VARCHAR(10) NOT NULL,
 			m_time		VARCHAR(10) NOT NULL,
+			m_title		VARCHAR(100) NOT NULL,
 			m_memo		VARCHAR(400) NOT NULL,
 			m_image		VARCHAR(125)
  	)

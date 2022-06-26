@@ -14,17 +14,23 @@
 		</div>
 	</header>
 	<main>
-		<table class="memo-list">
-			<c:forEach items="${MEMO}" var="MEMO">
-				<tr data-seq="${MEMO.m_seq}">
-					<td>${MEMO.m_author}</td>
-					<td>${MEMO.m_memo}</td>
-					<td>${MEMO.m_date}</td>
-				</tr>
-			</c:forEach>
-		</table>
-		<div>
-			<a href="${rootPath}/memo/addMemo"> 메모 추가하기</a>
+		<div class="full-container">
+			<div class="memo-listbox">
+				<div class="btn-addMemo">+</div>
+				<table class="memo-list">
+					<c:forEach items="${MEMO}" var="MEMO">
+						<tr data-seq="${MEMO.m_seq}">
+							<td class="td-date">${MEMO.m_date}</td>
+							<td class="td-memo">
+								<div class="div-memo">${MEMO.m_title}</div>
+							</td>
+						</tr>
+					</c:forEach>
+				</table>
+			</div>
+			<div class="memo-drop">
+			
+			</div>
 		</div>
 	</main>
 </body>

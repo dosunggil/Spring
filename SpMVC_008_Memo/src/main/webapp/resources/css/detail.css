@@ -1,0 +1,43 @@
+div.detail-main {
+	width: 700px;
+	display: flex;
+	height: auto;
+}
+
+div.detail-container {
+	padding: 10px 20px;
+}
+
+.detail-box {
+	width: 650px;
+	padding: 8px 3px 7px;
+	margin-top: 5px;
+	margin-bottom: 15px;
+	text-align: left;
+	
+}
+
+div.detail-title-box {
+	outline: none;
+	border: none;
+	border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.detail-memo-box {
+/* 	padding-top : 13px; */
+	outline: none;
+	resize:none;
+	border: none;
+
+
+}
+div.img-box {
+	width: 300px;
+}
+div.img-box img {
+	width : 300px;
+	object-fit : scale-down;
+}
+
+
+.title-box

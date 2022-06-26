@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+header {
+	
+	position: relative;
+	background-color: white;
+	height: 70px;
+	/* box-shadow: 0 0 10px 1px #d7d7d7; */
+	border-bottom: 1px solid #4444444a;
+	min-width: 1190px;
+	align-items: center;
+	align-content: center;
+	
+}
+
+div.top-nav {
+	text-align: center;
+	font-size: 50px;
+	position: relative;
+	width: 1030px;
+	margin: 0 auto;
+	
+}
+
+div.top-nav a {
+	color: inherit;
+	text-decoration: none;
+}

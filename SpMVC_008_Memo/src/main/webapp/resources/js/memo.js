@@ -5,11 +5,12 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("클릭");
     const td = e.target;
 
-    if (td.tagName === "TD") {
+    if ((td.tagName === "TD")||(td.tagName==="DIV")) {
       const tr = td.closest("TR");
       const seq = tr.dataset.seq;
       // alert(isbn);
       document.location.href = `${rootPath}/memo/${seq}/detail`;
     }
   });
+
 });

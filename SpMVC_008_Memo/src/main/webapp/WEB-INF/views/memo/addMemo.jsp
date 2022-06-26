@@ -6,28 +6,41 @@
 
 <!DOCTYPE html>
 <html>
-<%@ include file="/WEB-INF/views/include/head.jsp"%>
 <body>
-<form method="POST" enctype="multipart/form-data">
-	<h1>메모 추가하기</h1>
-	
-		<input hidden="hidden" name="m_seq" value='<c:out value="${MEMOVO.m_seq }" default="0" ></c:out>' >
-	
-		<textarea rows="6" placeholder="메모 내용" name="m_memo" >${MEMOVO.m_memo}</textarea>
-		<!-- <input type="file" name="mfile" multiple="multiple" accept="images/*"> -->
-		
-		<img src="${rootPath}/upload/${MEMOVO.m_image}" >
-							<div class="cho-edit-btns">
-								<input accept=".gif, .jpg, .png" type="file" name="mfile"
-								value="${rootPath}/upload/${MEMOVO.m_image}"
-									id="cho-photo" style="display: none;"> <label
-									class="btn-edit-photo" for="cho-photo">사진 선택</label>
-									</div>
-		
-		
-		<button>등록하기</button>
+	<div class="addMemo-main">
+		<form method="POST" enctype="multipart/form-data">
+			<div class="addMemo-container">
+				<input hidden="hidden" name="m_seq"
+					value='<c:out value="${MEMOVO.m_seq }" default="0" ></c:out>'>
 
-</form>
+				<div class="title-box addMemo-box">
+					<input class="input" placeholder="새 메모" name="m_title"
+						value="${MEMOVO.m_title}" />
+					<div class="date-time">${MEMOVO.m_date} - ${MEMOVO.m_time}
+					</div>
+				</div>
+				<div class="memo-box addMemo-box">
+					<textarea class="memo-textarea" onkeydown="resize(this)"
+						onkeyup="resize(this)" placeholder="" name="m_memo">${MEMOVO.m_memo}</textarea>
+				</div>
+				<div class="img-box">
+					<img src="${rootPath}/upload/${MEMOVO.m_image}"
+						onerror="this.onerror=null; this.style.display='none'">
+				</div>
+				<div class="button-container">
+					<div class="btn-edit-photo button">
+						<input accept=".gif, .jpg, .png" type="file" name="mfile"
+							value="${rootPath}/upload/${MEMOVO.m_image}" id="cho-photo"
+							style="display: none;"> <label class="btn-edit-photo"
+							for="cho-photo">사진 선택</label>
+					</div>
+					<button class="button">저장</button>
+					<button class="button" type="reset">RESET</button>
+				</div>
+
+			</div>
+		</form>
+	</div>
 
 </body>
 </html>

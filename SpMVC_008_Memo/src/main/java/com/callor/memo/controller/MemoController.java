@@ -74,7 +74,7 @@ public class MemoController {
 	@ModelAttribute("memoVO")
 	private MemoVO memoVO() {
 		Date date = new Date(System.currentTimeMillis());
-		SimpleDateFormat dayFormat = new SimpleDateFormat("yyyy-MM-dd");
+		SimpleDateFormat dayFormat = new SimpleDateFormat("MM-dd");
 		SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm:ss");
 
 		MemoVO memoVO = MemoVO.builder().m_date(dayFormat.format(date)).m_time(timeFormat.format(date))

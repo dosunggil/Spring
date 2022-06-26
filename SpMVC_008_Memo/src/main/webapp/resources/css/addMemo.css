@@ -1,0 +1,64 @@
+div.addMemo-main {
+	width: 700px;
+/* 	display: flex; */
+}
+
+div.addMemo-container {
+	padding: 10px 20px;
+}
+
+div.addMemo-main input, div.addMemo-main textarea {
+	
+	font-size: 16px;
+	font-family: "Malgun Gothic";
+	padding: 5px 3px;
+	margin-top: 5px;
+	margin-bottom: 15px;
+}
+
+input.input {
+	width : 500px;
+	outline: none;
+	border: none;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+div.img-box {
+	width: 300px;
+}
+
+div.img-box img {
+	width: 300px;
+	object-fit: scale-down;
+}
+
+.memo-textarea {
+	width: 650px;
+	outline: none;
+	resize: none;
+	border: none;
+	overflow: visible;
+	min-height: 200px;
+}
+
+.button-container {
+	display: flex;
+	line-height: initial;
+	justify-content: right; 
+}
+.btn-edit-photo {
+	    margin-right: auto;
+}
+.button-container .button:not(:first-child) {
+	margin-left: 5px;
+}
+
+.title-box {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+}
+.date-time {
+	font-size: 15px;
+	color : rgba(0,0,0,0.5)
+}
