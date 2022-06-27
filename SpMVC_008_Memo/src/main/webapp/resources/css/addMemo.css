@@ -25,6 +25,7 @@ input.input {
 
 div.img-box {
 	width: 300px;
+	    text-align: left;;
 }
 
 div.img-box img {

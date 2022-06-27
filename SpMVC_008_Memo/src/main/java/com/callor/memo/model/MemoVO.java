@@ -21,4 +21,6 @@ public class MemoVO {
 	private String m_title; // 입력
 	private String m_memo	; // 입력
 	private String m_image;	
+	private String m_up_image;
+	
 }

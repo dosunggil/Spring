@@ -10,6 +10,6 @@ public interface MemoService extends MemoDao {
 	public String insertMemoAndFile(MemoVO memoVO, MultipartFile file);
 	public String updateMemoAndFile(MemoVO memoVO, MultipartFile file);
 
-	public String fileUp(MultipartFile file) throws Exception;
-	public boolean fileDelete(String filename) throws Exception;
+	public String fileUp(MultipartFile file);
+	public void fileDelete(String filename) ;
 }

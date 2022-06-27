@@ -22,7 +22,8 @@
 			m_time	,
 			m_title,
 			m_memo	,
-			m_image
+			m_image,
+			m_up_image
  		) values (
  			
 			#{m_author},
@@ -30,7 +31,8 @@
 			#{m_time},
 			#{m_title},
 			#{m_memo},
-			#{m_image}
+			#{m_image},
+			#{m_up_image}
  		)  
  	
  	</insert>
@@ -40,7 +42,8 @@
 			m_time	= #{m_time},
 			m_title	= #{m_title},
 			m_memo	= #{m_memo},
-			m_image = #{m_image}
+			m_image = #{m_image},
+			m_up_image = #{m_up_image}
 				where	m_seq= #{m_seq}
  	</update>
  	
@@ -59,7 +62,8 @@
 			m_time		VARCHAR(10) NOT NULL,
 			m_title		VARCHAR(100) NOT NULL,
 			m_memo		VARCHAR(400) NOT NULL,
-			m_image		VARCHAR(125)
+			m_image		VARCHAR(125),
+			m_up_image		VARCHAR(125)
  	)
  	</select>
  
