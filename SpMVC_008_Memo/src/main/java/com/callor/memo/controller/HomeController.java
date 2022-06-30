@@ -22,30 +22,17 @@ public class HomeController {
 	@Autowired
 	private MemoService memoService;
 	
-	
-	
 	@RequestMapping(value = {"","/"}, method = RequestMethod.GET)
 	public String home(Model model) {
 		List<MemoVO> memoList = memoService.selectAll();
 		model.addAttribute("MEMO",memoList);
-		
 		return "home";
 	}
 
 	@RequestMapping(value={"","/"} , method = RequestMethod.POST)
-	public String hoem(@ModelAttribute("memoVO") MemoVO memoVO
-			, @RequestParam("mfile") MultipartFile file)  {
-//		if(memoVO.getM_seq()==0) {
-//			memoService.insertMemoAndFile(memoVO, file);
-//			return "redirect:/";
-//		} else {
-//			memoService.updateMemoAndFile(memoVO, file);
-//			return "redirect:/";
-//		}
-		
-	memoService.insertAndUpdate(memoVO, file);
-	return "redirect:/";
-		
+	public String hoem(@ModelAttribute("memoVO") MemoVO memoVO, @RequestParam("mfile") MultipartFile file)  {
+		memoService.insertAndUpdate(memoVO, file);
+		return "redirect:/";
 	}
 	
 	@ModelAttribute("memoVO")
