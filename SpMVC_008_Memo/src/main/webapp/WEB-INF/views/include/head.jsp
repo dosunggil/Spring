@@ -8,7 +8,7 @@
 <title>메모장</title>
 <script>const rootPath = "${rootPath}"</script>
 <script src="${rootPath}/resources/js/addMemo.js?ver=012" /></script>
-<script src="${rootPath}/resources/js/ajax.js?ver=001" /></script>
+<script src="${rootPath}/resources/js/ajax.js?ver=003" /></script>
 
 <link rel="stylesheet" href="${rootPath}/resources/css/reset.css" />
 <link rel="stylesheet" href="${rootPath}/resources/css/main.css" />

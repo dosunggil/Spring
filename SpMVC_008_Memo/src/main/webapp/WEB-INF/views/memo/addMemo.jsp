@@ -35,7 +35,14 @@
 							 <label class="btn-edit-photo"	for="cho-photo">사진 선택</label>
 					</div>
 					<button class="button">저장</button>
-					<a class="button" href="${rootPath}/memo/${MEMOVO.m_seq}/delete">삭제</a>
+					<c:choose>
+						<c:when test="${not empty MEMOVO}">
+							<a class="button" href="${rootPath}/memo/${MEMOVO.m_seq}/delete">삭제</a>
+						</c:when>
+						<c:otherwise>
+							<a class="button" href="${rootPath}/">취소</a>
+						</c:otherwise>
+					</c:choose>
 				</div>
 
 			</div>
