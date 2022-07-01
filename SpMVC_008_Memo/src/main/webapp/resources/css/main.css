@@ -91,3 +91,7 @@ div.div-memo {
 .div-memo, .div-memo-empty {
 	text-align: right;
 }
+
+.div-memo-empty {
+margin: 10px 0;	
+}

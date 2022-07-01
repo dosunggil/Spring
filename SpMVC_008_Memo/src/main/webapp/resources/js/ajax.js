@@ -12,11 +12,14 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   });
 
+  let SEQ = 0;
+
   memo_table?.addEventListener("click", (e) => {
     const td = e.target;
     if (td.tagName === "TD" || td.tagName === "DIV") {
       const tr = td.closest("TR");
       const seq = tr.dataset.seq;
+      SEQ = tr.dataset.seq;
 
       fetch(`${rootPath}/memo/${seq}/update`)
         .then((res) => res.text())

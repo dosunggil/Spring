@@ -6,11 +6,12 @@
 
 <!DOCTYPE html>
 <html>
+<script>const SEQ = ${MEMOVO.m_seq}</script>
 <body>
 	<div class="addMemo-main">
 		<form method="POST" enctype="multipart/form-data">
 			<div class="addMemo-container">
-				<input hidden="hidden" name="m_seq"
+				<input hidden="hidden" name="m_seq" data-seq="${MEMOVO.m_seq}"
 					value='<c:out value="${MEMOVO.m_seq }" default="0" ></c:out>'>
 
 				<div class="title-box addMemo-box">
@@ -37,7 +38,8 @@
 					<button class="button">저장</button>
 					<c:choose>
 						<c:when test="${not empty MEMOVO}">
-							<a class="button" href="${rootPath}/memo/${MEMOVO.m_seq}/delete">삭제</a>
+							<%-- <a class="button" href="${rootPath}/memo/${MEMOVO.m_seq}/delete">삭제</a> --%>
+							<a class="button" onclick="AAA(${MEMOVO.m_seq})">삭제</a>
 						</c:when>
 						<c:otherwise>
 							<a class="button" href="${rootPath}/">취소</a>

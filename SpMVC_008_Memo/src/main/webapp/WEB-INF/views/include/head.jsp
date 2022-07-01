@@ -7,8 +7,8 @@
 <meta charset="UTF-8">
 <title>메모장</title>
 <script>const rootPath = "${rootPath}"</script>
-<script src="${rootPath}/resources/js/addMemo.js?ver=012" /></script>
-<script src="${rootPath}/resources/js/ajax.js?ver=003" /></script>
+<script src="${rootPath}/resources/js/ajax.js?ver=005" /></script>
+<script src="${rootPath}/resources/js/addMemo.js?ver=015" /></script>
 
 <link rel="stylesheet" href="${rootPath}/resources/css/reset.css" />
 <link rel="stylesheet" href="${rootPath}/resources/css/main.css" />

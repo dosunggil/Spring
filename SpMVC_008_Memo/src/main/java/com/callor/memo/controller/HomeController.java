@@ -42,7 +42,7 @@ public class HomeController {
 		SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm:ss");
 
 		MemoVO memoVO = MemoVO.builder().m_date(dayFormat.format(date)).m_time(timeFormat.format(date))
-				.m_author("dosunggil").build();
+				.m_author("chothegenius@gmail.com").build();
 
 		return memoVO;
 	}
