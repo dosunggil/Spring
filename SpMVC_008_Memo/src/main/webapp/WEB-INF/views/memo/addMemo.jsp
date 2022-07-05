@@ -25,7 +25,7 @@
 				</div>
 				<div class="img-box">
 					<img class="img-img" src="${rootPath}/upload/${MEMOVO.m_up_image}"
-						<%-- onerror="this.onerror=null; this.src='${rootPath}/resources/images/logo2.png'"  --%>
+						onerror="this.onerror=null; this.src='${rootPath}/resources/images/logo2.png'" 
 						>
 				</div>
 				<div class="button-container">
