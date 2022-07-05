@@ -12,8 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   });
 
-  let SEQ = 0;
-
   memo_table?.addEventListener("click", (e) => {
     const td = e.target;
     if (td.tagName === "TD" || td.tagName === "DIV") {

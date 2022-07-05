@@ -34,14 +34,30 @@ public class MemoServiceImplV1 implements MemoService {
 		
 		// update 일 경우
 		if(m_seq != 0 ) {
+			
 			MemoVO updateMemo = memodao.findById(m_seq);
 			String fileName = updateMemo.getM_image();
 			
 			// 저장된 파일 이름과 새롭게 업로드된 파일 이름이 다르면
-			if(!(fileName.equals(file.getOriginalFilename() ) ) ) {
+			// 첫 번째는 업로드한 파일이 있으면
+			if(!file.getOriginalFilename().equals("") && !(fileName.equals(file.getOriginalFilename() ) ) ) {
 				//기존의 파일을 삭제하고
 				fileDelete(updateMemo.getM_up_image());
 			}
+			
+			/*
+			 * 업로드하는 파일이 없으면 기존 파일 계승
+			 */
+			if(file.getOriginalFilename().equals("")) {
+				String file1 = updateMemo.getM_image();
+				String file2 = updateMemo.getM_up_image();
+				
+				memo.setM_image(file1);
+				memo.setM_up_image(file2);
+				return memodao.update(memo);
+			}
+		
+			
 			
 			// 파일을 업로드하고
 			// 업로드된 파일 이름 가져오기
@@ -51,11 +67,13 @@ public class MemoServiceImplV1 implements MemoService {
 			// 원래 파일 이름과 UUID 가 부착된 파일 이름을 VO에 저장
 			memo.setM_image(file.getOriginalFilename());
 			memo.setM_up_image(upLoadFileName);
+		
 			return memodao.update(memo);
 		}
-		
 		memo.setM_image(file.getOriginalFilename());
 		memo.setM_up_image(fileUp(file));
+	
+		
 		return memodao.insert(memo);
 	
 	}

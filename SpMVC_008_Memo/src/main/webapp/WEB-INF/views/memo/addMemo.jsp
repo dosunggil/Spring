@@ -25,8 +25,8 @@
 				</div>
 				<div class="img-box">
 					<img class="img-img" src="${rootPath}/upload/${MEMOVO.m_up_image}"
-						onerror="this.onerror=null; this.src='${rootPath}/resources/images/logo2.png'" 
-						alt="이미지를 등록하세요!">
+						<%-- onerror="this.onerror=null; this.src='${rootPath}/resources/images/logo2.png'"  --%>
+						>
 				</div>
 				<div class="button-container">
 					<div class="btn-edit-photo button">

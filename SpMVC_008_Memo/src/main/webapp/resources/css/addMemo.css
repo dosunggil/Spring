@@ -38,7 +38,7 @@ div.img-box img {
 	outline: none;
 	resize: none;
 	border: none;
-	overflow: visible;
+	overflow: hidden;
 	min-height: 300px;
 }
 
