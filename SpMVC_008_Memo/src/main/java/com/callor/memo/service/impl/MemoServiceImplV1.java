@@ -40,7 +40,7 @@ public class MemoServiceImplV1 implements MemoService {
 			
 			// 저장된 파일 이름과 새롭게 업로드된 파일 이름이 다르면
 			// 첫 번째는 업로드한 파일이 있으면
-			if(!file.getOriginalFilename().equals("") && !(fileName.equals(file.getOriginalFilename() ) ) ) {
+			if(!( file.getOriginalFilename().equals("") || (fileName.equals(file.getOriginalFilename() ) ) ) ){
 				//기존의 파일을 삭제하고
 				fileDelete(updateMemo.getM_up_image());
 			}
