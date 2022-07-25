@@ -40,8 +40,8 @@ public class StudentServiceImplV1 implements StudentService {
 
 	@Override
 	public int update(StudentVO vo) {
-		studentDao.update(vo);
-		return 0;
+		int ret = studentDao.update(vo);
+		return ret;
 	}
 
 }

@@ -14,6 +14,7 @@
 		<org.slf4j-version>1.7.36</org.slf4j-version>
 		<jackson-version>2.13.3</jackson-version>
 		<org.jasypt-version>1.9.3</org.jasypt-version>
+		<org.tiles-version>3.0.8</org.tiles-version>
 	</properties>
 
 	<dependencyManagement>
@@ -101,6 +102,19 @@
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-dbcp2</artifactId>
 			<version>2.9.0</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.tiles/tiles-core -->
+		<dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-core</artifactId>
+			<version>${org.tiles-version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.tiles/tiles-extras -->
+		<dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-extras</artifactId>
+			<version>${org.tiles-version}</version>
 		</dependency>
 
 
