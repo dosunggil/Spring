@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+ <mapper namespace="com.cho.score.persistence.ScoreDao">
+ 
+ 	<select id="selectAll" resultType="ScoreVO">
+ 		select * from tbl_student
+ 	</select>
+ 	
+ 	<update id="updateScore">
+ 		update tbl_score 
+ 		set sc_score = #{sc_score}
+ 		where sc_stnum = #{st_num} and sc_sbcode = #{sb_code}
+ 	</update>
+ 	
+ 	<select id="findByStNum" resultType="ScoreVO">
+ 		select * from tbl_score
+		left join tbl_subject 
+		on sc_sbcode = sb_code
+		where sc_stnum = #{sc_stnum};
+ 	</select>
+ 	<select id="findById" resultType="ScoreVO">
+ 		select * from tbl_student
+ 		where st_num = #{st_num}
+ 	</select>
+ 	 	
+ 	<insert id="insert" parameterType="ScoreVO" >
+ 		insert into tbl_student (
+		 		st_num,
+				st_name,
+				st_dept,
+				st_grade,
+				st_tel,
+				st_addr
+ 		) values (
+		 		#{st_num},
+				#{st_name},
+				#{st_dept},
+				#{st_grade},
+				#{st_tel},
+				#{st_addr}	
+ 		)  
+ 	
+ 	</insert>
+ 	<update id="update" parameterType="ScoreVO">
+ 		update tbl_student set 
+				st_name= #{st_name},
+				st_dept= #{st_dept},
+				st_grade= #{st_grade},
+				st_tel= #{st_tel},
+				st_addr= #{st_addr}
+				where 	st_num = #{st_num}
+ 	</update>
+ 	
+ 	<delete id="delete">
+ 		delete from tbl_student where st_num = #{st_num}
+ 	</delete>
+ 	
+ 	
+ 	
+ 	
+ 	<select id="create_memo_table">
+ 			Create Table if not exists tbl_memo (
+ 			m_seq 		BIGINT PRIMARY KEY AUTO_INCREMENT,
+			m_author 	VARCHAR(25) NOT NULL,
+			m_date 		VARCHAR(10) NOT NULL,
+			m_time		VARCHAR(10) NOT NULL,
+			m_title		VARCHAR(100) NOT NULL,
+			m_memo		VARCHAR(400) NOT NULL,
+			m_image		VARCHAR(125),
+			m_up_image		VARCHAR(125)
+ 	)
+ 	</select>
+ 
+ </mapper> 

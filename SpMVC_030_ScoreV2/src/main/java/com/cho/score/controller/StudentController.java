@@ -48,6 +48,13 @@ public class StudentController {
 		return "student/detail";
 	}
 	
+	@RequestMapping(value="/updateScore",method=RequestMethod.GET)
+	public String updateScore(String st_num, Model model) {
+		StudentVO stvo = studentService.findById(st_num);
+		model.addAttribute("ST", stvo);
+		return "student/updateScore";
+	}
+	
 	@RequestMapping(value="/update",method=RequestMethod.GET)
 	public String update(String st_num, Model model) {
 		StudentVO stvo = studentService.findById(st_num);

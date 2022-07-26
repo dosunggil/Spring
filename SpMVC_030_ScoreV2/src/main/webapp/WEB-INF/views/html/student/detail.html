@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layout}">
+<div layout:fragment="content">
+	<div class="student detail-body">
+		<div>학번 :</div>
+		<div class="student detail" th:text=${ST.st_num}></div>
+	</div>
+	<div class="student detail-body">
+		<div>이름 :</div>
+		<div class="student detail" th:text=${ST.st_name}></div>
+	</div>
+	<div class="student detail-body">
+		<div>학과 :</div>
+		<div class="student detail" th:text=${ST.st_dept}></div>
+	</div>
+	<div class="student detail-body">
+		<div>전화번호 :</div>
+		<div class="student detail" th:text=${ST.st_tel}></div>
+	</div>
+	<div class="student detail-body">
+		<div>주소 :</div>
+		<div class="student detail" th:text=${ST.st_addr}></div>
+	</div>
+
+	<div th:each=" SST : ${ST.scoreList}">
+		<div th:text="|${SST.sb_name}(${SST.sb_code}) : ${SST.sc_score}|"></div>
+	</div>
+
+	<div class="btn-box">
+		<div>
+			<a th:href="@{/student/update(st_num=${ST.st_num})}">수정</a>
+		</div>
+		<div>
+			<a th:href="@{/score/update(st_num=${ST.st_num})}">성적 수정</a>
+		</div>
+		<div>
+			<a th:href="@{/student}">리스트</a>
+		</div>
+	</div>
+</div>

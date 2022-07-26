@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+ <mapper namespace="com.cho.score.persistence.StudentDao">
+ 	<select id="selectAll"  resultType="StudentVO">
+ 		select * from tbl_student
+ 	</select>
+
+
+
+
+ 
+ 	<!--
+ 	id : PK 칼럼 
+ 	property : vo 클래스의 변수 이름 
+ 	column : table 의 칼럼 이름
+ 	-->
+ 	<resultMap type="StudentVO" id="findByIdAndScore">
+ 		<id property="st_num" column="st_num"/>
+ 		<collection property="scoreList" column="st_num" ofType="ScoreVO" select="findByIdScore"></collection>
+ 	</resultMap>
+
+ 	<select id ="findByIdScore" resultType="ScoreVO">
+ 		select * from tbl_score
+	 		left join tbl_subject
+	 			on sc_sbcode = sb_code
+ 		where sc_stnum = #{sc_stnum}
+ 	</select>
+ 	<select id="findById" resultMap="findByIdAndScore">
+ 		select * from tbl_student
+ 		where st_num = #{st_num}
+ 	</select>
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	 	
+ 	<insert id="insert" parameterType="StudentVO" >
+ 		insert into tbl_student (
+		 		st_num,
+				st_name,
+				st_dept,
+				st_grade,
+				st_tel,
+				st_addr
+ 		) values (
+		 		#{st_num},
+				#{st_name},
+				#{st_dept},
+				#{st_grade},
+				#{st_tel},
+				#{st_addr}	
+ 		)  
+ 	
+ 	</insert>
+ 	<update id="update" parameterType="StudentVO">
+ 		update tbl_student set 
+				st_name= #{st_name},
+				st_dept= #{st_dept},
+				st_grade= #{st_grade},
+				st_tel= #{st_tel},
+				st_addr= #{st_addr}
+				where 	st_num = #{st_num}
+ 	</update>
+ 	
+ 	<delete id="delete">
+ 		delete from tbl_student where st_num = #{st_num}
+ 	</delete>
+ 	
+ 	
+ 	
+ 	
+ 	<select id="create_memo_table">
+ 			Create Table if not exists tbl_memo (
+ 			m_seq 		BIGINT PRIMARY KEY AUTO_INCREMENT,
+			m_author 	VARCHAR(25) NOT NULL,
+			m_date 		VARCHAR(10) NOT NULL,
+			m_time		VARCHAR(10) NOT NULL,
+			m_title		VARCHAR(100) NOT NULL,
+			m_memo		VARCHAR(400) NOT NULL,
+			m_image		VARCHAR(125),
+			m_up_image		VARCHAR(125)
+ 	)
+ 	</select>
+ 
+ </mapper> 
