@@ -65,7 +65,7 @@
 
 
 ## thymeleaf 에서 파일 연결하기
-* th:include : 파일을 합성하여 완전히 한 파일로 생성
+* th:include : 파일을 합성하여 완전히 한 파일로 생성 : Controller 에서 model 에 담아 보낸 변수를 모두가 공유가능.
 * th:insert : 현재 tag 의 내부에 끼워넣기
 * th:replace : 현재 tag 를 지우고 대체하기
 
