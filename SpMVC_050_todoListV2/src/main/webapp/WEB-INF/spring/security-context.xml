@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:sec="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/security https://www.springframework.org/schema/security/spring-security-5.3.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<context:component-scan base-package="com.cho.todo.service.auth"></context:component-scan>
+ 	<!--
+ 	 permitAll 과 Anonymous() 의 차이
+ 		permitAll : 누구나 접근 가능하도록 설정
+ 			로그인 유무는 상관 없음
+ 			
+ 		isAnonymous() : 로그인 되지 않은 사용자만 접근 가능
+ 	 -->
+<!-- 		<sec:intercept-url pattern="/403" access="permitAll"/>
+		<sec:intercept-url pattern="/" access="isAuthenticated()"/>
+
+		<sec:access-denied-handler error-page="/403"/> -->
+	<sec:http>
+		<sec:intercept-url pattern="/login" access="isAnonymous()"/>
+ 		<sec:intercept-url pattern="/user/login" access="isAnonymous()"/>	
+		<sec:intercept-url pattern="/user/join" access="isAnonymous()"/>	 
+		
+		<sec:intercept-url pattern="/admin/**" access="isAuthenticated() AND hasRole('ROLE_ADMIN')"/>
+		<sec:intercept-url pattern="/todo/insert" access="isAuthenticated()"/>
+		
+		<sec:intercept-url pattern="/user/mypage" access="isAuthenticated()"/>
+		<sec:form-login/>
+		<sec:logout/>	
+	</sec:http>
+
+	<sec:authentication-manager>
+		<sec:authentication-provider>
+			<sec:user-service>
+				<sec:user name="dosung" authorities="ROLE_USER" password="{noop}aa1234" />
+			</sec:user-service>
+		</sec:authentication-provider>
+		
+		<sec:authentication-provider ref="authenticationProvider"/>
+	</sec:authentication-manager>
+</beans>
