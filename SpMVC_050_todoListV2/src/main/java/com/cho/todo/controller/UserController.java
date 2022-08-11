@@ -1,5 +1,7 @@
 package com.cho.todo.controller;
 
+import java.security.Principal;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,7 +33,7 @@ public class UserController {
 		return "redirect:/";
 	}
 	@RequestMapping(value="/mypage",method=RequestMethod.GET)
-	public String mypage() {
+	public String mypage(Principal principal) {
 		
 		return null;
 	}

@@ -15,6 +15,9 @@
 <body>
 <h1>여기는 join</h1>
 <form:form>
+	<input type="radio" name="uuu">
+	<input type="radio" name="uuu">
+	<input type="radio" name="uuu">
 	<input name="username" placeholder="아이디"><br>
 	<input name="password" placeholder="암호"><br>
 	<input name="email" placeholder="이메일"><br>
