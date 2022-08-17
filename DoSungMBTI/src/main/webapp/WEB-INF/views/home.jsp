@@ -16,6 +16,9 @@
 <body>
 <header>header </header>
 	<main>
+		<c:choose>
+		
+		</c:choose>
 		<div class="banner">
 			1. 잡담은 싫어하지만 내게 중요한 문제를 깊이 논의하는 것은 좋아한다.
 			<form method="post">
